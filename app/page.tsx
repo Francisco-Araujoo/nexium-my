@@ -1,30 +1,19 @@
+
+
+
+
+
 "use client"
 
-import { CardFooter } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import {
-  Check,
-  Star,
-  Code,
-  Smartphone,
-  Globe,
-  ArrowRight,
-  Menu,
-  Mail,
-  Instagram,
-  Github,
-  MessageCircle,
-  Users,
-  Award,
-  Rocket,
-  Shield,
-  X,
-} from "lucide-react"
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
+import {
+  MessageCircle, ArrowRight, X, Menu, Check, Globe, Code, Smartphone, Star, Instagram, Github, Mail
+} from "lucide-react"
 
 export default function NexiumLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -43,51 +32,52 @@ export default function NexiumLanding() {
 
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-purple-500/20 bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6 max-w-7xl">
-          <div className="flex items-center space-x-3">
-            <div className="relative">
+        <div className="container mx-auto flex h-16 items-center justify-between px-2 sm:px-4 md:px-6 max-w-full md:max-w-7xl">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <div className="relative min-w-[32px] min-h-[32px] sm:min-w-[40px] sm:min-h-[40px]">
               <Image
                 src="/images/nexium-logo.png"
                 alt="Nexium Logo"
                 width={40}
                 height={40}
-                className="rounded-lg transition-transform hover:scale-110 duration-300"
+                className="rounded-lg transition-transform hover:scale-110 duration-300 w-8 h-8 sm:w-10 sm:h-10 object-contain"
+                priority
               />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="truncate text-lg sm:text-xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent max-w-[120px] sm:max-w-none">
               NEXIUM
             </span>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-4 sm:space-x-6">
             <Link
               href="#servicos"
-              className="text-sm font-medium text-gray-300 hover:text-purple-400 transition-colors"
+              className="text-xs sm:text-sm font-medium text-gray-300 hover:text-purple-400 transition-colors"
             >
               Serviços
             </Link>
             <Link
               href="#portfolio"
-              className="text-sm font-medium text-gray-300 hover:text-purple-400 transition-colors"
+              className="text-xs sm:text-sm font-medium text-gray-300 hover:text-purple-400 transition-colors"
             >
               Portfólio
             </Link>
             <Link
               href="#sobre"
-              className="text-sm font-medium text-gray-300 hover:text-purple-400 transition-colors"
+              className="text-xs sm:text-sm font-medium text-gray-300 hover:text-purple-400 transition-colors"
             >
               Sobre
             </Link>
             <Link
               href="#contato"
-              className="text-sm font-medium text-gray-300 hover:text-purple-400 transition-colors"
+              className="text-xs sm:text-sm font-medium text-gray-300 hover:text-purple-400 transition-colors"
             >
               Contato
             </Link>
           </nav>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <Button
               size="sm"
               className="hidden md:inline-flex bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
@@ -154,27 +144,26 @@ export default function NexiumLanding() {
           <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20"></div>
           <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="flex flex-col justify-center space-y-6 text-center lg:text-left">
+              <div className="flex flex-col justify-center space-y-6 text-center lg:text-left min-w-0">
                 <div className="space-y-4">
                   <Badge variant="secondary" className="w-fit mx-auto lg:mx-0 bg-purple-600/20 text-purple-300 border-purple-500/30">
                     🚀 Conectando Ideias ao Futuro
                   </Badge>
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white">
                     Transforme Sua
-                    <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent break-words">
                       {" "}
                       Presença Digital
                     </span>
                   </h1>
                   <p className="max-w-[600px] mx-auto lg:mx-0 text-gray-300 md:text-xl">
-                    Desenvolvemos sistemas, landing pages de alta conversão e aplicativos mobile que impulsionam seu
-                    negócio para o próximo nível. Soluções tecnológicas que geram resultados reais.
+                    Desenvolvemos sistemas, landing pages de alta conversão e aplicativos mobile que impulsionam seu negócio para o próximo nível. Soluções tecnológicas que geram resultados reais.
                   </p>
                 </div>
-                <div className="flex flex-col gap-3 min-[400px]:flex-row justify-center lg:justify-start">
+                <div className="flex flex-col gap-3 w-full max-w-xs mx-auto lg:mx-0">
                   <Button
                     size="lg"
-                    className="h-14 px-8 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-lg font-semibold"
+                    className="w-full h-12 px-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-base font-semibold"
                   >
                     <MessageCircle className="mr-2 h-5 w-5" />
                     WhatsApp: (43) 98833-1584
@@ -182,43 +171,40 @@ export default function NexiumLanding() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="h-14 px-8 border-purple-500/50 text-purple-300 hover:bg-purple-600/20 text-lg bg-transparent"
+                    className="w-full h-12 px-4 border-purple-500/50 text-purple-300 hover:bg-purple-600/20 text-base bg-transparent"
                   >
                     Ver Portfólio
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </div>
-                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-400 animate-in fade-in slide-in-from-bottom duration-1000 delay-1200">
-                  <div className="flex items-center space-x-2 group">
-                    <Check className="h-4 w-4 text-green-400 group-hover:scale-110 transition-transform" />
-                    <span>Orçamento Gratuito</span>
+                <div className="flex flex-col gap-2 w-full max-w-xs mx-auto lg:mx-0 mt-2 animate-in fade-in slide-in-from-bottom duration-1000 delay-1200">
+                  <div className="flex items-center space-x-2 group rounded-lg px-3 py-1 bg-gradient-to-r from-purple-700/60 to-blue-700/60 shadow-md hover:scale-105 transition-transform duration-300">
+                    <Check className="h-5 w-5 text-green-400 animate-pulse group-hover:scale-125 transition-transform" />
+                    <span className="font-semibold text-sm bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent drop-shadow-sm tracking-wide">Orçamento Gratuito</span>
                   </div>
-                  <div className="flex items-center space-x-2 group">
-                    <Check className="h-4 w-4 text-green-400 group-hover:scale-110 transition-transform" />
-                    <span>Entrega Garantida</span>
+                  <div className="flex items-center space-x-2 group rounded-lg px-3 py-1 bg-gradient-to-r from-purple-700/60 to-blue-700/60 shadow-md hover:scale-105 transition-transform duration-300">
+                    <Check className="h-5 w-5 text-green-400 animate-pulse group-hover:scale-125 transition-transform" />
+                    <span className="font-semibold text-sm bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent drop-shadow-sm tracking-wide">Entrega Garantida</span>
                   </div>
-                  <div className="flex items-center space-x-2 group">
-                    <Check className="h-4 w-4 text-green-400 group-hover:scale-110 transition-transform" />
-                    <span>Suporte 24/7</span>
+                  <div className="flex items-center space-x-2 group rounded-lg px-3 py-1 bg-gradient-to-r from-purple-700/60 to-blue-700/60 shadow-md hover:scale-105 transition-transform duration-300">
+                    <Check className="h-5 w-5 text-green-400 animate-pulse group-hover:scale-125 transition-transform" />
+                    <span className="font-semibold text-sm bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent drop-shadow-sm tracking-wide">Suporte 24/7</span>
                   </div>
                 </div>
               </div>
               <div className="flex items-center justify-center animate-in fade-in slide-in-from-right duration-1000 delay-800">
-                <div className="relative w-full max-w-md lg:max-w-lg group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 rotate-gradient"></div>
-                  <div className="absolute inset-0 animate-ping bg-gradient-to-r from-purple-400/20 to-blue-400/20 rounded-2xl opacity-20"></div>
-                  <div className="absolute -inset-2 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 rounded-2xl opacity-20 blur-md animate-pulse"></div>
+                <div className="relative w-full flex justify-center items-center">
                   <Image
                     src="/images/NexiumRobo.png"
-                    width={400}
-                    height={400}
+                    width={480}
+                    height={480}
                     alt="Nexium Robot"
-                    className="relative mx-auto w-full h-auto max-w-[300px] sm:max-w-[350px] lg:max-w-[400px] rounded-2xl object-cover shadow-2xl border border-purple-500/30 hover:border-purple-400/50 transition-all duration-500 hover:scale-105 group-hover:rotate-1 holographic float-animation"
+                    className="mx-auto w-full max-w-[340px] sm:max-w-[400px] md:max-w-[480px] h-auto rounded-2xl object-contain shadow-2xl transition-all duration-500 hover:scale-105 float-animation"
                     priority
                   />
-                  <div className="absolute top-4 right-4 w-3 h-3 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50 glow-animation"></div>
-                  <div className="absolute bottom-6 left-6 w-2 h-2 bg-blue-400 rounded-full animate-ping shadow-lg shadow-blue-400/50"></div>
-                  <div className="absolute top-1/2 right-8 w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse shadow-lg shadow-purple-400/50"></div>
+                  <div className="absolute top-6 right-10 w-4 h-4 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50 glow-animation"></div>
+                  <div className="absolute bottom-10 left-10 w-3 h-3 bg-blue-400 rounded-full animate-ping shadow-lg shadow-blue-400/50"></div>
+                  <div className="absolute top-1/2 right-16 w-2.5 h-2.5 bg-purple-400 rounded-full animate-pulse shadow-lg shadow-purple-400/50"></div>
                 </div>
               </div>
             </div>
@@ -349,15 +335,16 @@ export default function NexiumLanding() {
         <section id="sobre" className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-t from-purple-900/10 to-transparent"></div>
           <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
-            <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="flex items-center justify-center order-2 lg:order-1">
-                <div className="relative w-full max-w-md group">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* Imagem do fundador */}
+              <div className="flex items-center justify-center order-2 lg:order-1 w-full">
+                <div className="relative w-full max-w-[160px] xs:max-w-[180px] sm:max-w-[220px] md:max-w-[260px] lg:max-w-md group">
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
                   <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl opacity-20 animate-pulse"></div>
                   <Image
                     src="/images/myFace.webp"
-                    width={400}
-                    height={400}
+                    width={260}
+                    height={260}
                     alt="Francisco Araújo - Fundador da Nexium"
                     className="relative mx-auto w-full h-auto rounded-2xl object-cover shadow-2xl border border-purple-500/30 hover:border-purple-400/50 transition-all duration-500 group-hover:scale-105"
                     quality={95}
@@ -367,53 +354,37 @@ export default function NexiumLanding() {
                   <div className="absolute bottom-4 right-4 w-4 h-4 bg-green-400 rounded-full animate-ping shadow-lg shadow-green-400/50"></div>
                 </div>
               </div>
-              <div className="flex flex-col justify-center space-y-6 text-center lg:text-left order-1 lg:order-2">
-                <div className="space-y-4">
-                  <Badge variant="secondary" className="w-fit mx-auto lg:mx-0 bg-purple-600/20 text-purple-300 border-purple-500/30 hover:scale-105 transition-transform animate-in fade-in slide-in-from-top duration-700 delay-300">
-                    Sobre a Nexium
-                  </Badge>
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-white">Francisco Araújo</h2>
-                  <h3 className="text-xl text-purple-400 font-semibold">Fundador & CEO da Nexium</h3>
-                  <p className="text-gray-300 md:text-lg max-w-2xl mx-auto lg:mx-0">
-                    Com anos de experiência em desenvolvimento web e mobile, fundei a Nexium com a missão de conectar
-                    ideias ao futuro através da tecnologia. Nossa empresa é especializada em criar soluções digitais que
-                    não apenas impressionam visualmente, mas que geram resultados concretos para nossos clientes.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 max-w-md mx-auto lg:mx-0">
-                    <div className="space-y-2">
-                      <div className="flex items-center space-x-2">
-                        <Award className="h-5 w-5 text-purple-400" />
-                        <span className="text-white font-semibold">50+</span>
-                      </div>
-                      <p className="text-sm text-gray-400">Projetos Entregues</p>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center space-x-2">
-                        <Users className="h-5 w-5 text-purple-400" />
-                        <span className="text-white font-semibold">100%</span>
-                      </div>
-                      <p className="text-sm text-gray-400">Clientes Satisfeitos</p>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center space-x-2">
-                        <Rocket className="h-5 w-5 text-purple-400" />
-                        <span className="text-white font-semibold">3+</span>
-                      </div>
-                      <p className="text-sm text-gray-400">Anos de Experiência</p>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center space-x-2">
-                        <Shield className="h-5 w-5 text-purple-400" />
-                        <span className="text-white font-semibold">24/7</span>
-                      </div>
-                      <p className="text-sm text-gray-400">Suporte Técnico</p>
-                    </div>
+              {/* Informações do fundador e empresa */}
+              <div className="flex flex-col justify-center space-y-4 text-center lg:text-left order-1 lg:order-2 w-full">
+                <Badge variant="secondary" className="w-fit mx-auto lg:mx-0 bg-purple-600/20 text-purple-300 border-purple-500/30 hover:scale-105 transition-transform animate-in fade-in slide-in-from-top duration-700 delay-300">
+                  Sobre a Nexium
+                </Badge>
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tighter sm:text-5xl text-white">Francisco Araújo</h2>
+                <h3 className="text-base sm:text-xl text-purple-400 font-semibold">Fundador & CEO da Nexium</h3>
+                <p className="text-gray-300 text-sm sm:text-lg max-w-2xl mx-auto lg:mx-0">
+                  Com anos de experiência em desenvolvimento web e mobile, fundei a Nexium com a missão de conectar ideias ao futuro através da tecnologia. Nossa empresa é especializada em criar soluções digitais que não apenas impressionam visualmente, mas que geram resultados concretos para nossos clientes.
+                </p>
+                {/* Grid de informações */}
+                <div className="grid grid-cols-2 gap-2 sm:gap-4 pt-2 max-w-xs mx-auto lg:mx-0 text-xs sm:text-sm">
+                  <div className="flex flex-col items-center bg-slate-800/60 rounded-lg p-2">
+                    <span className="text-purple-400 font-bold text-base sm:text-lg">50+</span>
+                    <span className="text-gray-400">Projetos Entregues</span>
                   </div>
-                </div>
-                <div className="text-sm text-gray-400">
-                  <p>
-                    <strong className="text-purple-400">CNPJ:</strong> 60.286.542/0001-02
-                  </p>
+                  <div className="flex flex-col items-center bg-slate-800/60 rounded-lg p-2">
+                    <span className="text-purple-400 font-bold text-base sm:text-lg">100%</span>
+                    <span className="text-gray-400">Clientes Satisfeitos</span>
+                  </div>
+                  <div className="flex flex-col items-center bg-slate-800/60 rounded-lg p-2">
+                    <span className="text-purple-400 font-bold text-base sm:text-lg">3+</span>
+                    <span className="text-gray-400">Anos de Experiência</span>
+                  </div>
+                  <div className="flex flex-col items-center bg-slate-800/60 rounded-lg p-2">
+                    <span className="text-purple-400 font-bold text-base sm:text-lg">24/7</span>
+                    <span className="text-gray-400">Suporte Técnico</span>
+                  </div>
+                  <div className="col-span-2 flex justify-center items-center bg-slate-800/60 rounded-lg p-2 mt-1">
+                    <span className="text-xs text-gray-400"><span className="text-purple-400 font-bold">CNPJ:</span> 60.286.542/0001-02</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -541,27 +512,29 @@ export default function NexiumLanding() {
                 </p>
               </div>
               <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center">
-                <Button
-                  size="lg"
-                  className="h-14 px-8 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-lg font-semibold"
-                  asChild
-                >
-                  <Link href="https://wa.me/5543988331584" target="_blank">
-                    <MessageCircle className="mr-2 h-5 w-5" />
-                    WhatsApp: (43) 98833-1584
-                  </Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="h-14 px-8 border-purple-500/50 text-purple-300 hover:bg-purple-600/20 text-lg bg-transparent"
-                  asChild
-                >
-                  <Link href="mailto:franciscoaraujodev@gmail.com">
-                    <Mail className="mr-2 h-5 w-5" />
-                    Enviar E-mail
-                  </Link>
-                </Button>
+                <div className="flex flex-col w-full gap-2 max-w-xs mx-auto">
+                  <Button
+                    size="lg"
+                    className="w-full h-12 px-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-base font-semibold"
+                    asChild
+                  >
+                    <Link href="https://wa.me/5543988331584" target="_blank">
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      WhatsApp: (43) 98833-1584
+                    </Link>
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full h-12 px-4 border-purple-500/50 text-purple-300 hover:bg-purple-600/20 text-base bg-transparent"
+                    asChild
+                  >
+                    <Link href="mailto:franciscoaraujodev@gmail.com">
+                      <Mail className="mr-2 h-5 w-5" />
+                      Enviar E-mail
+                    </Link>
+                  </Button>
+                </div>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-400">
                 <div className="flex items-center space-x-2">
