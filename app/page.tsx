@@ -14,9 +14,14 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import {
   MessageCircle, ArrowRight, X, Menu, Check, Globe, Code, Smartphone, Star, Instagram, Github, Mail
 } from "lucide-react"
+import { ChatBot } from "@/components/ChatBot"
 
 export default function NexiumLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const handlePortfolioClick = () => {
+    window.open('https://franciscoaraujodev.netlify.app/', '_blank')
+  }
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -58,7 +63,9 @@ export default function NexiumLanding() {
               Serviços
             </Link>
             <Link
-              href="#portfolio"
+              href="https://franciscoaraujodev.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-xs sm:text-sm font-medium text-gray-300 hover:text-purple-400 transition-colors"
             >
               Portfólio
@@ -78,12 +85,18 @@ export default function NexiumLanding() {
           </nav>
 
           <div className="flex items-center space-x-2 sm:space-x-4">
-            <Button
-              size="sm"
-              className="hidden md:inline-flex bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+            <Link
+              href="https://wa.me/43988331584?text=Solicitar%20Orçamentos"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Solicitar Orçamento
-            </Button>
+              <Button
+                size="sm"
+                className="hidden md:inline-flex bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+              >
+                Solicitar Orçamento
+              </Button>
+            </Link>
             <Button
               variant="ghost"
               size="sm"
@@ -127,12 +140,19 @@ export default function NexiumLanding() {
               >
                 Contato
               </Link>
-              <Button
-                size="sm"
-                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 mt-4"
+              <Link
+                href="https://wa.me/43988331584?text=Solicitar%20Orçamentos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
               >
-                Solicitar Orçamento
-              </Button>
+                <Button
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 mt-4"
+                >
+                  Solicitar Orçamento
+                </Button>
+              </Link>
             </nav>
           </div>
         )}
@@ -694,6 +714,7 @@ export default function NexiumLanding() {
                   </Link>
                 </li>
               </ul>
+              <ChatBot />
             </div>
           </div>
 

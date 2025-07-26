@@ -96,7 +96,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "C:\\Users\\franc\\OneDrive\\Área de Trabalho\\Projetos\\nexium-my",
+    "outputFileTracingRoot": "C:\\Users\\franc\\OneDrive\\Área de Trabalho\\Projetos\\nexium-my-1",
     "experimental": {
       "allowedDevOrigins": [],
       "nodeMiddleware": false,
@@ -175,7 +175,7 @@
       "forceSwcTransforms": false,
       "largePageDataBytes": 128000,
       "turbo": {
-        "root": "C:\\Users\\franc\\OneDrive\\Área de Trabalho\\Projetos\\nexium-my"
+        "root": "C:\\Users\\franc\\OneDrive\\Área de Trabalho\\Projetos\\nexium-my-1"
       },
       "typedRoutes": false,
       "typedEnv": false,
@@ -281,7 +281,7 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.mjs"
   },
-  "appDir": "C:\\Users\\franc\\OneDrive\\Área de Trabalho\\Projetos\\nexium-my",
+  "appDir": "C:\\Users\\franc\\OneDrive\\Área de Trabalho\\Projetos\\nexium-my-1",
   "relativeAppDir": "",
   "files": [
     ".next\\routes-manifest.json",
