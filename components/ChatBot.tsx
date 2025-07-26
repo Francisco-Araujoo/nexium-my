@@ -163,14 +163,14 @@ export function ChatBot() {
                                 <div
                                     key={index}
                                     className={`mb-4 ${message.sender === 'bot'
-                                            ? 'text-left'
-                                            : 'text-right'
+                                        ? 'text-left'
+                                        : 'text-right'
                                         }`}
                                 >
                                     <div
                                         className={`inline-block p-3 rounded-lg max-w-[85%] whitespace-pre-wrap ${message.sender === 'bot'
-                                                ? 'bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-gray-200'
-                                                : 'bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-gray-200'
+                                            ? 'bg-gradient-to-r from-purple-600/20 to-blue-600/20 text-gray-200'
+                                            : 'bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-gray-200'
                                             }`}
                                     >
                                         {message.text}
